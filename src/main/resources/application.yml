@@ -1,0 +1,7 @@
+
+spring:
+  application:
+    name: template
+
+server:
+  port: 7788
