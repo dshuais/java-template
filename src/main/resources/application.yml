@@ -1,7 +1,14 @@
 
 spring:
-  application:
-    name: template
+  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#      username: root
+#      password: 1qazXSW@
+#      url: jdbc:mysql://81.71.152.97:3306/test?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false
+    username: dshuais
+    password: 1zALwIgcJqeAdOvv
+    url: jdbc:mysql://mysql.sqlpub.com:3306/dshuaishomepage?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false
+
 
 server:
   port: 7788
