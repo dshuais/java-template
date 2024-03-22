@@ -18,19 +18,22 @@ public class ScoreImpl implements ScoreInterface {
         double sum = 0;
         List sortList = sort(list);
 
-//        for (int i = 0; i < list.size(); i++) {
-//
-//        }
+        sortList.set(0, 0.0);
+        sortList.set(sortList.size() - 1, 0.0);
+
+        for (int i = 0; i < sortList.size(); i++) {
+            sum += list.get(i);
+        }
         return sum;
     }
 
     @Override
     public List sort(List<Double> list) {
         for (int i = 0; i < list.size(); i++) {
-            for (int j = 1; j < list.size(); j++) {
-                if(list.get(i) > list.get(j)) {
-                    double max = list.get(i);
-                    list.set(i, list.get(j));
+            for (int j = 1; j < list.size() - i; j++) {
+                if(list.get(j-1) > list.get(j)) {
+                    double max = list.get(j-1);
+                    list.set(j-1, list.get(j));
                     list.set(j, max);
                 }
             }
