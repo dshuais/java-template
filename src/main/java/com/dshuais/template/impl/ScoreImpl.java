@@ -16,15 +16,20 @@ public class ScoreImpl implements ScoreInterface {
     @Override
     public double calculate(List<Double> list) {
         double sum = 0;
+        // 先进行排序
         List sortList = sort(list);
 
+        // 去掉最低分和最高分 将首尾改为0分
         sortList.set(0, 0.0);
         sortList.set(sortList.size() - 1, 0.0);
 
+        // 循环拿到除最高最低外总分
         for (int i = 0; i < sortList.size(); i++) {
             sum += list.get(i);
         }
-        return sum;
+
+        // return 平均分
+        return sum / (sortList.size() - 2);
     }
 
     @Override
