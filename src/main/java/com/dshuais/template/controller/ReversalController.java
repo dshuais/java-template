@@ -9,8 +9,13 @@ import org.springframework.web.bind.annotation.RestController;
  * @description:
  */
 @RestController
-public class ReversalContorller {
+public class ReversalController {
 
+    /**
+     * 反转字符串
+     * @param string
+     * @return
+     */
     @RequestMapping("/reversal")
     public String reversal(String string) {
 
@@ -23,5 +28,23 @@ public class ReversalContorller {
 
         System.out.println(s);
         return s;
+    }
+
+    /**
+     * 隐藏手机号
+     * @param phone
+     * @return
+     */
+    @RequestMapping("/hidePhone")
+    public String hide(String phone) {
+
+        if(phone.length() != 11) {
+            return "不是正确的手机号";
+        }
+
+        String start = phone.substring(0, 3);
+        String end = phone.substring(phone.length() - 4, phone.length());
+
+        return start + "****" + end;
     }
 }

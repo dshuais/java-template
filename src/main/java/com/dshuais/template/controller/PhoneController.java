@@ -27,7 +27,7 @@ public class PhoneController {
         phoneS.add(huawei);
 
         // 查询价格小于number的手机信息
-        List<PhoneDO> filterPhone = phoneS.stream().filter(phone -> phone.getNumber() < number).collect(Collectors.toList());
+        List<PhoneDO> filterPhone = phoneS.stream().filter(phone -> phone.getMoney() < number).collect(Collectors.toList());
 
         return filterPhone;
     }

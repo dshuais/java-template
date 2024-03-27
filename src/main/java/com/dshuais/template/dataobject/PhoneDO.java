@@ -13,11 +13,11 @@ public class PhoneDO {
 
     private String brand;
 
-    private Integer number;
+    private Integer money;
 
     public PhoneDO(String b, Integer n) {
         brand = b;
-        number = n;
+        money = n;
     }
 
 }
